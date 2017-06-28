@@ -41,6 +41,11 @@ void setColorConversion709( GLfloat conversionMatrix[9] );
     GLuint luminanceTexture, chrominanceTexture;
 
     __unsafe_unretained id<GPUImageVideoCameraDelegate> _delegate;
+    
+@public
+    BOOL isFullYUVRange;
+    
+    int imageBufferWidth, imageBufferHeight;
 }
 
 /// Whether or not the underlying AVCaptureSession is running
@@ -152,5 +157,7 @@ void setColorConversion709( GLfloat conversionMatrix[9] );
 
 + (BOOL)isBackFacingCameraPresent;
 + (BOOL)isFrontFacingCameraPresent;
+
+- (void)updateTargetsForVideoCameraUsingCacheTextureAtWidth:(int)bufferWidth height:(int)bufferHeight time:(CMTime)currentTime;
 
 @end

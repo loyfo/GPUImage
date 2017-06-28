@@ -34,10 +34,6 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
     GLint yuvConversionMatrixUniform;
     const GLfloat *_preferredConversion;
     
-    BOOL isFullYUVRange;
-    
-    int imageBufferWidth, imageBufferHeight;
-    
     BOOL addedAudioInputsDueToEncodingTarget;
 }
 
