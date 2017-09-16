@@ -23,7 +23,6 @@ void setColorConversion709( GLfloat conversionMatrix[9] )
 @interface GPUImageVideoCamera () 
 {
 	AVCaptureDeviceInput *audioInput;
-	AVCaptureAudioDataOutput *audioOutput;
     NSDate *startingCaptureTime;
 	
     dispatch_queue_t cameraProcessingQueue, audioProcessingQueue;

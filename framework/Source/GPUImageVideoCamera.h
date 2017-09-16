@@ -32,7 +32,8 @@ void setColorConversion709( GLfloat conversionMatrix[9] );
     AVCaptureDevice *_microphone;
     AVCaptureDeviceInput *videoInput;
 	AVCaptureVideoDataOutput *videoOutput;
-
+    AVCaptureAudioDataOutput *audioOutput;
+    
     BOOL capturePaused;
     GPUImageRotationMode outputRotation, internalRotation;
     dispatch_semaphore_t frameRenderingSemaphore;
