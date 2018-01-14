@@ -18,12 +18,19 @@ typedef NS_ENUM(NSInteger, UIImageOrientation) {
 #endif
 
 dispatch_queue_attr_t GPUImageDefaultQueueAttribute(void);
-void runOnMainQueueWithoutDeadlocking(void (^block)(void));
-void runSynchronouslyOnVideoProcessingQueue(void (^block)(void));
-void runAsynchronouslyOnVideoProcessingQueue(void (^block)(void));
-void runSynchronouslyOnContextQueue(GPUImageContext *context, void (^block)(void));
-void runAsynchronouslyOnContextQueue(GPUImageContext *context, void (^block)(void));
-void reportAvailableMemoryForGPUImage(NSString *tag);
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+    void runOnMainQueueWithoutDeadlocking(void (^block)(void));
+    void runSynchronouslyOnVideoProcessingQueue(void (^block)(void));
+    void runAsynchronouslyOnVideoProcessingQueue(void (^block)(void));
+    void runSynchronouslyOnContextQueue(GPUImageContext *context, void (^block)(void));
+    void runAsynchronouslyOnContextQueue(GPUImageContext *context, void (^block)(void));
+    void reportAvailableMemoryForGPUImage(NSString *tag);
+#ifdef __cplusplus
+}
+#endif
 
 @class GPUImageMovieWriter;
 
@@ -31,7 +38,7 @@ void reportAvailableMemoryForGPUImage(NSString *tag);
  
  Images or frames of video are uploaded from source objects, which are subclasses of GPUImageOutput. These include:
  
- - GPUImageVideoCamera (for live video from an iOS camera) 
+ - GPUImageVideoCamera (for live video from an iOS camera)
  - GPUImageStillCamera (for taking photos with the camera)
  - GPUImagePicture (for still images)
  - GPUImageMovie (for movies)
