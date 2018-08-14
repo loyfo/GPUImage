@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
-  s.name     = 'GPUImage'
-  s.version  = '0.1.7'
+  s.name     = 'GPUImage-Loyfo'
+  s.version  = '0.1.9'
   s.license  = 'BSD'
-  s.summary  = 'An open source iOS framework for GPU-based image and video processing.'
-  s.homepage = 'https://github.com/BradLarson/GPUImage'
-  s.author   = { 'Brad Larson' => 'contact@sunsetlakesoftware.com' }
-  s.source   = { :git => 'https://github.com/BradLarson/GPUImage.git', :tag => "#{s.version}" }
+  s.summary  = 'A version of GPUImage that fits justshot'
+  s.homepage = 'https://gitb.ufotosoft.com/iostools/UFGPUImage'
+  s.author   = { 'Loyfo' => 'hwp_163@163.com' }
+  s.source   = { :git => 'git@gitb.ufotosoft.com:iostools/UFGPUImage.git', :tag => "#{s.version}" }
   
   s.source_files = 'framework/Source/**/*.{h,m}'
   s.resources = 'framework/Resources/*.png'
@@ -24,4 +24,5 @@ Pod::Spec.new do |s|
                         'framework/Source/GPUImageStillCamera.*',
                         'framework/Source/GPUImageUIElement.*'
   s.osx.xcconfig = { 'GCC_WARN_ABOUT_RETURN_TYPE' => 'YES' }
+end
 end
